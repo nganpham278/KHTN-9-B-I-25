@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Phiếu học tập số 1 đến 5</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600;800&family=Be+Vietnam+Pro:wght@400;600;800&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+
+:root{--ink:#3b3340;--paper:#fffdf8;--ok:#2e9b5f;--bad:#e5484d;--k:1;--kp:1}
+@media(min-width:1000px){:root{--k:1.25;--kp:1.15}}
+@media(min-width:1400px){:root{--k:1.5;--kp:1.35}}
+@media(min-width:1800px){:root{--k:1.7;--kp:1.5}}
+html{font-size:clamp(16px,.9vw + 8px,28px)}
+.tabs{--k:var(--kp)}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{font-family:'Nunito','Segoe UI',Arial,sans-serif;color:var(--ink);background:#f6f1e7;font-size:calc(var(--k) * 16px);line-height:1.5}
+body.on3{line-height:normal}
+#p45{--k:var(--kp);font-size:calc(var(--k) * 16px);padding:0 12px 40px}
+#p12{--ink:#3a3844;--paper:#fffefb;--on:#33303d;font-size:1rem;padding:0 .75rem 2.5rem}
+body.on12{background:#f8f3ec}
+#s3{display:none}
+#s3.active{display:block}
+@media print{
+  body,body.on3{background:#fff!important}
+  .tabs,#p45 .bar,#p12 .bar{display:none}
+  #s3{display:none!important}
+  #p45,#p12{padding:0}
+  #p45 .sheet,#p12 .sheet{display:block!important;box-shadow:none;page-break-after:always;border-radius:0;margin:0 auto}
+  #p45 .sheet:last-child,#p12 .sheet:last-child{page-break-after:auto}
+}
+
+.tabs{max-width:calc(var(--k) * 1100px);margin:0 auto;padding:calc(var(--k) * 14px) calc(var(--k) * 12px);display:flex;gap:calc(var(--k) * 10px);justify-content:center;flex-wrap:wrap}
+.tab{font:800 calc(var(--k) * 17px) 'Baloo 2','Nunito',sans-serif;border:3px solid;border-radius:999px;padding:calc(var(--k) * 6px) calc(var(--k) * 22px);cursor:pointer;background:#fff}
+.tab.c{border-color:#ff9d7a;color:#b8481f}
+.tab.v{border-color:#b79af0;color:#6a40b5}
+.tab.c.on{background:#ff9d7a;color:#33303d}
+.tab.v.on{background:#b79af0;color:#33303d}
+.tab.o{border-color:#ff8c28;color:#b85a00}
+.tab.y{border-color:#ffc933;color:#b37a00}
+.tab.b{border-color:#4fa3ff;color:#1f5fb3}
+.tab.o.on{background:#ff8c28;color:#2a1200}
+.tab.y.on{background:#ffc933;color:#4a3300}
+.tab.b.on{background:#4fa3ff;color:#fff}
+#p12 .sheet{--c:#ff9d7a;--cd:#b8481f;--cl:#fff0e8;--cb:#ffd2bf;display:none;max-width:54rem;margin:0 auto;background:var(--paper);border:.19rem solid var(--c);border-radius:1.75rem;padding:1.4rem 1.5rem 1.75rem;box-shadow:0 .37rem 0 var(--cb)}
+#p12 .sheet.p2{--c:#b79af0;--cd:#6a40b5;--cl:#f3edff;--cb:#dccfff}
+#p12 .sheet.active{display:block}
+#p12 h1{font:800 1.85rem 'Baloo 2','Nunito',sans-serif;margin:0;color:var(--cd);line-height:1.2}
+#p12 .sub{margin:.1rem 0 .75rem;font-weight:700}
+#p12 .who{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:.4rem}
+#p12 .who label{flex:1 1 12rem;font-weight:800;font-size:.88rem}
+#p12 .who input{width:100%;margin-top:.1rem}
+#p12 .q{background:var(--cl);border-radius:1.25rem;padding:.9rem 1rem;margin-top:1rem}
+#p12 .q h2{font:800 1.2rem 'Baloo 2','Nunito',sans-serif;margin:0 0 .5rem;color:var(--cd);line-height:1.4}
+#p12 .q h2 span{background:var(--c);color:var(--on);border-radius:999px;padding:.05rem .75rem;margin-right:.4rem;white-space:nowrap}
+#p12 .q p{margin:.35rem 0}
+#p12 input,#p12 select,#p12 textarea{font:600 .95rem 'Nunito',sans-serif;color:var(--ink);border:.125rem solid var(--cb);border-radius:.75rem;padding:.35rem .6rem;background:#fff;outline:none}
+#p12 input:focus,#p12 select:focus,#p12 textarea:focus{border-color:var(--c);box-shadow:0 0 0 .19rem var(--cb)}
+#p12 textarea{width:100%;min-height:4.6rem;resize:vertical}
+#p12 .fill{line-height:2.7;background:#fff;border-radius:1rem;padding:.3rem .9rem;margin:.4rem 0}
+#p12 .fill input.s{width:6.5rem;text-align:center}
+#p12 .ok{border-color:var(--ok)!important;background:#eafaf0!important}
+#p12 .bad{border-color:var(--bad)!important;background:#fff0f0!important}
+#p12 .bank{background:#fff;border:.125rem dashed var(--c);border-radius:1.1rem;padding:.4rem .7rem .5rem;display:flex;flex-wrap:wrap;gap:.4rem;align-items:center;min-height:3rem}
+#p12 .bank:before{content:"🧺 Từ gợi ý:";font-weight:800;color:var(--cd);font-size:.9rem;margin-right:.2rem}
+#p12 .chip{background:var(--c);color:var(--on);font-weight:800;font-size:.92rem;border-radius:.8rem;padding:.25rem .75rem;cursor:grab;box-shadow:0 .19rem 0 rgba(0,0,0,.15);user-select:none}
+#p12 .slot{display:inline-flex;align-items:center;justify-content:center;min-width:8.5rem;min-height:2.2rem;vertical-align:middle;border:.15rem dashed var(--c);border-radius:.8rem;background:var(--cl);padding:.1rem .3rem;font-size:.8rem;color:#8a7f90}
+#p12 .slot:empty::before{content:"kéo từ vào đây"}
+#p12 .slot .chip{box-shadow:none;font-size:.92rem}
+#p12 .slot.over,#p12 .bank.over{background:var(--cb)}
+#p12 .chip.sel{outline:.19rem solid var(--cd)}
+#p12 .row{display:flex;align-items:center;justify-content:space-between;gap:.6rem;flex-wrap:wrap;background:#fff;border-radius:.9rem;padding:.4rem .75rem;margin:.4rem 0}
+#p12 .row b{font-weight:800}
+#p12 .row select{flex:1 1 15rem;max-width:100%}
+#p12 .hint{display:none;margin-top:.55rem;background:#fff;border-left:.375rem solid var(--c);border-radius:.75rem;padding:.5rem .75rem;font-size:.92rem}
+#p12 .show .hint{display:block}
+#p12 .hinted{font-style:italic;color:#6a5f70}
+#p12 .bar{display:flex;gap:.6rem;flex-wrap:wrap;align-items:center;margin-top:.8rem}
+#p12 .btn{font:800 1rem 'Baloo 2','Nunito',sans-serif;border:0;border-radius:999px;padding:.4rem 1.1rem;cursor:pointer;box-shadow:0 .25rem 0 rgba(0,0,0,.16);color:var(--on);background:var(--c)}
+#p12 .btn.alt{background:#fff;color:var(--cd);border:.125rem solid var(--c)}
+#p12 .btn:active{transform:translateY(2px);box-shadow:0 .1rem 0 rgba(0,0,0,.16)}
+#p12 .msg{font:800 1.05rem 'Baloo 2','Nunito',sans-serif;color:var(--cd)}
+#p12 .ok{border-color:#2e9b5f!important;background:#e6f7ec!important}
+#p12 .bad{border-color:#e5484d!important;background:#ffecec!important}
+#p12 input.ok,#p12 select.ok,#p12 textarea.ok{color:#1b6b40}
+#p12 input.bad,#p12 select.bad,#p12 textarea.bad{color:#b3262b}
+#p12 .slot.ok,#p12 .slot.bad{border-style:solid}
+#p12 .sheet .slot.ok .chip{background:#2e9b5f;color:#fff}
+#p12 .sheet .slot.bad .chip{background:#e5484d;color:#fff}
+#p12 .sheet .pills.ok button.on{background:#2e9b5f;border-color:#2e9b5f;color:#fff}
+#p12 .sheet .pills.bad button.on{background:#e5484d;border-color:#e5484d;color:#fff}
+#p12 .msg.good{color:#2e9b5f}
+#p12 .msg.wrong{color:#e5484d}
+@media(max-width:600px){#p12 .sheet{padding:1rem .75rem}
+#p12 h1{font-size:1.5rem}
+#p12 .slot{min-width:6.5rem}}
+#p45 .sheet{--c:#ffc933;--cd:#b37a00;--cl:#fff4cc;--cb:#ffe58f;display:none;max-width:calc(var(--k) * 860px);margin:0 auto;background:var(--paper);border:3px solid var(--c);border-radius:28px;padding:calc(var(--k) * 22px) calc(var(--k) * 24px) calc(var(--k) * 28px);box-shadow:0 6px 0 var(--cb)}
+#p45 .sheet.blue{--c:#4fa3ff;--cd:#1f5fb3;--cl:#e3f1ff;--cb:#b9dbff}
+#p45 .sheet.active{display:block}
+#p45 h1{font:800 calc(var(--k) * 30px) 'Baloo 2','Nunito',sans-serif;margin:0;color:var(--cd);line-height:1.2}
+#p45 .sub{margin:calc(var(--k) * 2px) 0 calc(var(--k) * 12px);font-weight:700}
+#p45 .who{display:flex;gap:calc(var(--k) * 10px);flex-wrap:wrap;margin-bottom:6px}
+#p45 .who label{flex:1 1 200px;font-weight:800;font-size:calc(var(--k) * 14px)}
+#p45 .who input{width:100%;margin-top:2px}
+#p45 .q{background:var(--cl);border-radius:20px;padding:calc(var(--k) * 14px) calc(var(--k) * 16px);margin-top:16px}
+#p45 .q h2{font:800 calc(var(--k) * 19px) 'Baloo 2','Nunito',sans-serif;margin:0 0 calc(var(--k) * 8px);color:var(--cd)}
+#p45 .q h2 span{background:var(--c);color:#3a2a00;border-radius:999px;padding:calc(var(--k) * 1px) calc(var(--k) * 12px);margin-right:6px}
+#p45 .blue .q h2 span{color:#fff}
+#p45 .row{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--k) * 10px);flex-wrap:wrap;background:#fff;border-radius:14px;padding:calc(var(--k) * 7px) calc(var(--k) * 12px);margin:calc(var(--k) * 6px) 0;border:2px solid transparent}
+#p45 .row>b{font-weight:800}
+#p45 input,#p45 select,#p45 textarea{font:600 calc(var(--k) * 15px) 'Nunito',sans-serif;color:var(--ink);border:2px solid var(--cb);border-radius:12px;padding:calc(var(--k) * 6px) calc(var(--k) * 10px);background:#fff;outline:none}
+#p45 input:focus,#p45 select:focus,#p45 textarea:focus,#p45 .pills button:focus-visible{border-color:var(--c);box-shadow:0 0 0 3px var(--cb)}
+#p45 textarea{width:100%;min-height:calc(var(--k) * 74px);resize:vertical}
+#p45 .pills{display:inline-flex;gap:calc(var(--k) * 6px);padding:calc(var(--k) * 2px);border-radius:999px;border:2px solid transparent}
+#p45 .pills button{font:700 calc(var(--k) * 14px) 'Nunito',sans-serif;border:2px solid var(--cb);background:#fff;color:var(--ink);border-radius:999px;padding:calc(var(--k) * 3px) calc(var(--k) * 14px);cursor:pointer}
+#p45 .pills button.on{background:var(--c);border-color:var(--c);color:#3a2a00;font-weight:800}
+#p45 .blue .pills button.on{color:#fff}
+#p45 .ok{border-color:var(--ok)!important;background:#eafaf0!important}
+#p45 .bad{border-color:var(--bad)!important;background:#fff0f0!important}
+#p45 .fill{line-height:2.2}
+#p45 .fill input{width:calc(var(--k) * 110px);text-align:center}
+#p45 .legend{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--k) * 6px);margin-bottom:8px;font-weight:700;font-size:calc(var(--k) * 14px)}
+#p45 .legend div{background:#fff;border-radius:12px;padding:calc(var(--k) * 6px) calc(var(--k) * 10px)}
+#p45 .legend b{color:var(--cd)}
+#p45 .hint{display:none;margin-top:8px;background:#fff;border-left:6px solid var(--c);border-radius:12px;padding:calc(var(--k) * 8px) calc(var(--k) * 12px);font-size:calc(var(--k) * 14.5px)}
+#p45 .show .hint{display:block}
+#p45 .hinted{font-style:italic;color:#6a5f70}
+#p45 .bar{margin-top:14px;display:flex;gap:calc(var(--k) * 10px);flex-wrap:wrap;align-items:center;justify-content:center}
+#p45 .btn{font:800 calc(var(--k) * 16px) 'Baloo 2','Nunito',sans-serif;border:0;border-radius:999px;padding:calc(var(--k) * 8px) calc(var(--k) * 20px);cursor:pointer;box-shadow:0 4px 0 rgba(0,0,0,.18);color:#3a2a00;background:var(--c)}
+#p45 .blue .btn{color:#fff}
+#p45 .btn.alt{background:#fff;color:var(--cd);border:2px solid var(--c)}
+#p45 .btn:active{transform:translateY(2px);box-shadow:0 2px 0 rgba(0,0,0,.18)}
+#p45 .msg{font:800 calc(var(--k) * 17px) 'Baloo 2','Nunito',sans-serif;color:var(--cd);min-width:calc(var(--k) * 140px);text-align:center}
+#p45 .cols2{display:grid;grid-template-columns:1fr 1fr;gap:calc(var(--k) * 10px)}
+#p45 .match{display:grid;grid-template-columns:1.1fr 1fr;gap:calc(var(--k) * 14px);align-items:start}
+#p45 .mrow{display:flex;align-items:center;justify-content:space-between;gap:calc(var(--k) * 10px);background:#fff;border-radius:14px;padding:calc(var(--k) * 8px) calc(var(--k) * 10px);margin:calc(var(--k) * 6px) 0}
+#p45 .slot{flex:0 0 58%;min-height:calc(var(--k) * 54px);border:2.5px dashed var(--c);border-radius:14px;background:var(--cl);display:flex;align-items:center;justify-content:center;padding:calc(var(--k) * 4px);font-size:calc(var(--k) * 13px);color:#7a6f80;text-align:center}
+#p45 .slot:empty::before{content:"Kéo ứng dụng vào đây"}
+#p45 .slot.over,#p45 .bank.over{background:var(--cb)}
+#p45 .bank{background:#fff;border:2px solid var(--cb);border-radius:18px;padding:calc(var(--k) * 8px) calc(var(--k) * 10px);min-height:calc(var(--k) * 120px)}
+#p45 .chip{background:var(--c);color:#3a2a00;font-weight:800;font-size:calc(var(--k) * 14px);line-height:1.35;border-radius:14px;padding:calc(var(--k) * 8px) calc(var(--k) * 12px);margin:calc(var(--k) * 6px) 0;cursor:grab;box-shadow:0 3px 0 rgba(0,0,0,.18);user-select:none;width:100%}
+#p45 .slot .chip{margin:0;box-shadow:none}
+#p45 .blue .chip{color:#fff}
+#p45 .chip.sel{outline:3px solid var(--cd)}
+#p45 .qnote{margin:0 0 calc(var(--k) * 8px);font-weight:700;font-size:calc(var(--k) * 14.5px);color:#6a5f70}
+#p45 .row.j{display:grid;grid-template-columns:minmax(0,1.25fr) auto minmax(0,1.3fr);gap:calc(var(--k) * 12px);align-items:center}
+#p45 .row.j input{width:100%;border-style:dashed;min-height:calc(var(--k) * 40px)}
+@media(max-width:700px){#p45 .row.j{grid-template-columns:1fr}}
+@media(max-width:600px){#p45 .match{grid-template-columns:1fr}
+#p45 .slot{flex-basis:55%}
+#p45 .sheet{padding:calc(var(--k) * 16px) calc(var(--k) * 12px)}
+#p45 .legend,#p45 .cols2{grid-template-columns:1fr}
+#p45 h1{font-size:calc(var(--k) * 24px)}}
+@media(prefers-reduced-motion:reduce){#p45 *{transition:none!important}}
+body.on3{
+  --bg: #eef2ff;
+  --glow: rgba(255, 140, 40, .18);
+  --surface: #ffffff;
+  --line: rgba(18, 22, 56, .14);
+  --text: #121638;
+  --muted: #4b5080;
+  --accent: #ff8c28;
+  --accent-ink: #1d0f06;
+  --slot-line: #d9640a;
+  --slot-bg: rgba(255, 140, 40, .08);
+  --slot-over: rgba(255, 140, 40, .22);
+  --bank-bg: #ffffff;
+  --ok: #1fa85a;
+  --ok-ink: #ffffff;
+  --bad: #d93a4a;
+  --bad-ink: #ffffff}
+@media (prefers-color-scheme: dark){body.on3{
+    --bg: #0a0e2a;
+    --glow: rgba(255, 140, 40, .16);
+    --surface: rgba(255, 255, 255, .05);
+    --line: rgba(255, 255, 255, .14);
+    --text: #f5f2ff;
+    --muted: #b9b4dc;
+    --slot-line: #ffb23e;
+    --slot-bg: rgba(255, 178, 62, .07);
+    --slot-over: rgba(255, 178, 62, .24);
+    --bank-bg: #141945;
+    --ok: #3ddc84;
+    --ok-ink: #052212;
+    --bad: #ff5d6c;
+    --bad-ink: #2a0509;
+  }}
+body.on3{
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  background-image: radial-gradient(900px 420px at 85% -80px, var(--glow), transparent 70%);
+  background-repeat: no-repeat;
+  color: var(--text);
+  font-family: "Be Vietnam Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-text-size-adjust: 100%}
+#s3 .wrap{ max-width: calc(var(--k) * 980px); margin: 0 auto; padding: calc(var(--k) * 34px) calc(var(--k) * 20px) calc(var(--k) * 70px)}
+#s3 h1{ margin: 0; font-size: clamp(calc(var(--k) * 28px), 5vw, calc(var(--k) * 38px)); line-height: 1.12; font-weight: 800; letter-spacing: -.01em}
+#s3 .hint{ margin: calc(var(--k) * 10px) 0 0; font-size: calc(var(--k) * 17px); color: var(--muted); font-style: italic}
+#s3 .how{ margin: calc(var(--k) * 14px) 0 0; font-size: calc(var(--k) * 16px); line-height: 1.6; max-width: 66ch}
+#s3 .scorebar{
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: calc(var(--k) * 16px);
+  margin: calc(var(--k) * 22px) 0 0;
+  padding: calc(var(--k) * 12px) calc(var(--k) * 18px);
+  background: var(--bank-bg);
+  border: 1.5px solid var(--line);
+  border-radius: 16px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, .16)}
+#s3 .sb-text{ display: flex; flex-direction: column; gap: calc(var(--k) * 2px); min-width: calc(var(--k) * 150px)}
+#s3 .sb-text strong{ font-size: calc(var(--k) * 18px)}
+#s3 .sb-text span{ font-size: calc(var(--k) * 13px); color: var(--muted)}
+#s3 .sb-bar{ flex: 1; height: calc(var(--k) * 10px); border-radius: 99px; background: var(--line); overflow: hidden}
+#s3 .sb-bar i{ display: block; height: 100%; width: 0; background: var(--ok); transition: width .4s}
+#s3 .card{
+  margin: calc(var(--k) * 22px) 0 0;
+  padding: calc(var(--k) * 22px) calc(var(--k) * 24px) calc(var(--k) * 24px);
+  background: var(--surface);
+  border: 1.5px solid var(--line);
+  border-radius: 22px}
+#s3 .q-head{ display: flex; align-items: flex-start; gap: calc(var(--k) * 14px); margin-bottom: 16px}
+#s3 .q-badge{
+  flex: none;
+  padding: calc(var(--k) * 6px) calc(var(--k) * 15px);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-weight: 800;
+  font-size: calc(var(--k) * 16px);
+  white-space: nowrap}
+#s3 .q-prompt{ margin: 0; font-size: calc(var(--k) * 19px); font-weight: 600; line-height: 1.5}
+#s3 .q-sub{ margin: 0 0 calc(var(--k) * 14px); font-size: calc(var(--k) * 15px); color: var(--muted)}
+#s3 .bank-wrap{
+  padding: calc(var(--k) * 12px) calc(var(--k) * 14px) calc(var(--k) * 14px);
+  background: var(--bank-bg);
+  border: 1.5px solid var(--line);
+  border-radius: 18px}
+#s3 .bank-wrap.over{ outline: 3px dashed var(--slot-line); outline-offset: 3px}
+#s3 .bank-label{ margin: 0 calc(var(--k) * 2px) calc(var(--k) * 10px); font-size: calc(var(--k) * 14px); font-weight: 600; color: var(--muted)}
+#s3 .bank{ display: flex; flex-wrap: wrap; gap: calc(var(--k) * 10px); min-height: calc(var(--k) * 46px)}
+#s3 .bank.stack{ flex-direction: column; flex-wrap: nowrap; gap: calc(var(--k) * 8px)}
+#s3 .chip{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--k) * 8px) calc(var(--k) * 18px);
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--accent-ink);
+  font-family: inherit;
+  font-size: calc(var(--k) * 17px);
+  font-weight: 600;
+  line-height: 1.2;
+  white-space: nowrap;
+  cursor: grab;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+  box-shadow: 0 3px 0 rgba(0, 0, 0, .28)}
+#s3 .chip.num{ width: calc(var(--k) * 42px); height: calc(var(--k) * 42px); padding: 0; font-size: calc(var(--k) * 20px); font-weight: 800}
+#s3 .chip.wide{
+  width: 100%;
+  justify-content: flex-start;
+  padding: calc(var(--k) * 10px) calc(var(--k) * 16px);
+  border-radius: 14px;
+  white-space: normal;
+  text-align: left;
+  font-size: calc(var(--k) * 16px);
+  line-height: 1.35}
+#s3 .chip.selected{ outline: 3px solid var(--text); outline-offset: 2px}
+#s3 .chip.dragging{ opacity: .25}
+#s3 .chip.ghost{
+  position: fixed;
+  left: 0; top: 0;
+  z-index: 1000;
+  margin: 0;
+  pointer-events: none;
+  transform: scale(1.05) rotate(-1.5deg);
+  box-shadow: 0 14px 28px rgba(0, 0, 0, .4);
+  cursor: grabbing}
+#s3 .chip.locked{ cursor: default; box-shadow: none}
+#s3 .slot{
+  display: inline-flex;
+  vertical-align: middle;
+  align-items: center;
+  justify-content: center;
+  min-width: calc(var(--k) * 140px);
+  min-height: calc(var(--k) * 46px);
+  margin: 0 calc(var(--k) * 6px);
+  padding: calc(var(--k) * 2px);
+  border: 2.5px dashed var(--slot-line);
+  border-radius: 14px;
+  background: var(--slot-bg);
+  transition: background .15s, transform .15s, border-color .15s}
+#s3 .slot.round{ width: calc(var(--k) * 58px); min-width: calc(var(--k) * 58px); height: calc(var(--k) * 58px); margin: 0; border-radius: 50%}
+#s3 .slot.block{ display: flex; width: 100%; min-height: calc(var(--k) * 58px); margin: 0; padding: calc(var(--k) * 3px); justify-content: flex-start}
+#s3 .slot.block:empty::before{ content: attr(data-ph); padding: 0 calc(var(--k) * 14px); font-size: calc(var(--k) * 14px); color: var(--muted)}
+#s3 .slot.over{ border-style: solid; background: var(--slot-over); transform: scale(1.03)}
+#s3 .slot .chip{ margin: 0}
+#s3 .slot.correct{ border-style: solid; border-color: var(--ok)}
+#s3 .slot.correct .chip{ background: var(--ok); color: var(--ok-ink)}
+#s3 .slot.wrong{ border-style: solid; border-color: var(--bad); animation: shake .36s}
+#s3 .slot.wrong .chip{ background: var(--bad); color: var(--bad-ink)}
+@keyframes shake{
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+#s3 .order-list{ margin-top: 14px}
+#s3 .order-row{ display: flex; align-items: center; gap: calc(var(--k) * 16px); padding: calc(var(--k) * 12px) 0; border-top: 1px solid var(--line)}
+#s3 .order-row p{ margin: 0; font-size: calc(var(--k) * 18px); line-height: 1.55}
+#s3 .match{ display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); gap: calc(var(--k) * 22px); align-items: start}
+#s3 .match .colhead{ margin: 0 0 calc(var(--k) * 6px); font-size: calc(var(--k) * 14px); font-weight: 600; color: var(--muted)}
+#s3 .match-row{ display: grid; grid-template-columns: calc(var(--k) * 158px) minmax(0, 1fr); gap: calc(var(--k) * 12px); align-items: center; padding: calc(var(--k) * 9px) 0; border-top: 1px solid var(--line)}
+#s3 .alabel{ font-size: calc(var(--k) * 17px); font-weight: 700; line-height: 1.35}
+#s3 .match .bank-wrap{ position: sticky; top: calc(env(safe-area-inset-top, 0px) + 84px)}
+@media (max-width: 760px){#s3 .match{ grid-template-columns: 1fr}
+#s3 .match .bank-wrap{ position: static; order: -1}
+#s3 .match-row{ grid-template-columns: 1fr; gap: calc(var(--k) * 6px)}}
+#s3 .fill{ margin: calc(var(--k) * 16px) 0 0}
+#s3 .fill p{ margin: 0 0 calc(var(--k) * 8px); font-size: clamp(calc(var(--k) * 18px), 3.6vw, calc(var(--k) * 21px)); line-height: 2.4; max-width: 66ch}
+#s3 textarea{
+  display: block;
+  width: 100%;
+  min-height: calc(var(--k) * 130px);
+  padding: calc(var(--k) * 14px) calc(var(--k) * 16px);
+  border-radius: 14px;
+  border: 2px solid var(--line);
+  background: var(--bank-bg);
+  color: var(--text);
+  font: inherit;
+  font-size: calc(var(--k) * 17px);
+  line-height: 1.6;
+  resize: vertical}
+#s3 textarea:focus-visible{ outline: 3px solid var(--slot-line); outline-offset: 2px}
+#s3 .model{
+  display: none;
+  margin-top: 16px;
+  padding: calc(var(--k) * 16px) calc(var(--k) * 18px);
+  border: 2px solid var(--ok);
+  border-radius: 14px;
+  background: var(--surface)}
+#s3 .model.show{ display: block}
+#s3 .model b{ display: block; margin-bottom: 6px; font-size: calc(var(--k) * 16px)}
+#s3 .model p{ margin: 0; font-size: calc(var(--k) * 17px); line-height: 1.65}
+#s3 .kwrow{ display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--k) * 8px); margin-top: 14px; font-size: calc(var(--k) * 15px); color: var(--muted)}
+#s3 .kw{ padding: calc(var(--k) * 5px) calc(var(--k) * 12px); border-radius: 999px; border: 2px solid var(--line); font-size: calc(var(--k) * 15px); font-weight: 600; color: var(--text)}
+#s3 .kw.hit{ border-color: var(--ok)}
+#s3 .kw.hit::before{ content: "\2713  "; color: var(--ok)}
+#s3 .kw.miss::before{ content: "\25CB  "; color: var(--muted)}
+#s3 .actions{ display: flex; flex-wrap: wrap; align-items: center; gap: calc(var(--k) * 10px); margin-top: 18px}
+#s3 .btn{
+  appearance: none;
+  border: 2px solid var(--line);
+  background: transparent;
+  color: var(--text);
+  font-family: inherit;
+  font-size: calc(var(--k) * 16px);
+  font-weight: 600;
+  line-height: 1;
+  padding: calc(var(--k) * 12px) calc(var(--k) * 20px);
+  border-radius: 14px;
+  cursor: pointer}
+#s3 .btn.primary{ background: var(--accent); border-color: var(--accent); color: var(--accent-ink)}
+#s3 .btn:hover{ filter: brightness(1.08)}
+#s3 .btn:focus-visible{ outline: 3px solid var(--text); outline-offset: 3px}
+#s3 .res{ font-size: calc(var(--k) * 16px); font-weight: 600}
+#s3 .res.good{ color: var(--ok)}
+#s3 .res.try{ color: var(--slot-line)}
+#s3 .final{ display: flex; flex-wrap: wrap; gap: calc(var(--k) * 10px); margin-top: 26px}
+#s3 .summary{
+  display: none;
+  margin-top: 20px;
+  padding: calc(var(--k) * 20px) calc(var(--k) * 22px);
+  border: 2px solid var(--slot-line);
+  border-radius: 18px;
+  background: var(--surface)}
+#s3 .summary.show{ display: block}
+#s3 .summary.good{ border-color: var(--ok)}
+#s3 .summary strong{ display: block; font-size: calc(var(--k) * 26px); font-weight: 800; margin-bottom: 8px}
+#s3 .summary ul{ margin: 0; padding-left: 20px; line-height: 1.8; font-size: calc(var(--k) * 17px)}
+#s3 .summary p{ margin: calc(var(--k) * 10px) 0 0; color: var(--muted); font-size: calc(var(--k) * 15px)}
+@media (max-width: 560px){#s3 .wrap{ padding: calc(var(--k) * 24px) calc(var(--k) * 12px) calc(var(--k) * 60px)}
+#s3 .card{ padding: calc(var(--k) * 18px) calc(var(--k) * 16px) calc(var(--k) * 20px)}
+#s3 .q-head{ flex-direction: column; gap: calc(var(--k) * 10px)}
+#s3 .scorebar{ gap: calc(var(--k) * 10px); padding: calc(var(--k) * 10px) calc(var(--k) * 12px)}
+#s3 .sb-text{ min-width: calc(var(--k) * 112px)}
+#s3 .slot{ min-width: calc(var(--k) * 112px)}
+#s3 .chip{ padding: calc(var(--k) * 8px) calc(var(--k) * 14px); font-size: calc(var(--k) * 16px)}
+#s3 .order-row p{ font-size: calc(var(--k) * 16px)}}
+@media (prefers-reduced-motion: reduce){#s3 .slot,#s3 .slot.wrong,#s3 .sb-bar i{ transition: none; animation: none}
+#s3 .chip.ghost{ transform: none}}
+</style>
+</head>
+<body class="on12">
+
+<nav class="tabs" aria-label="Chọn phiếu học tập">
+  <button class="tab c on" data-go="s1">🛢️ Phiếu số 1</button>
+  <button class="tab v" data-go="s2">💨 Phiếu số 2</button>
+  <button class="tab o" data-go="s3">🛢️ Phiếu số 3</button>
+  <button class="tab y" data-go="s4">🌼 Phiếu số 4</button>
+  <button class="tab b" data-go="s5">💧 Phiếu số 5</button>
+</nav>
+
+<div id="p12">
+<!-- ===== PHIẾU 1 ===== -->
+<section class="sheet active" id="s1">
+  <h1>🛢️ Phiếu học tập số 1</h1>
+  <p class="sub">Dầu mỏ – nhiên liệu hóa thạch</p>
+  <div class="who"><label>Họ và tên<input type="text" placeholder="Nguyễn Văn A"></label><label>Lớp<input type="text" placeholder="9/1"></label></div>
+
+  <div class="q"><h2><span>1</span>Điền từ còn thiếu vào chỗ trống</h2>
+    <div class="bank">
+      <div class="chip" draggable="true" data-v="nhẹ hơn">nhẹ hơn</div>
+      <div class="chip" draggable="true" data-v="hydrocarbon">hydrocarbon</div>
+      <div class="chip" draggable="true" data-v="vỏ Trái Đất">vỏ Trái Đất</div>
+      <div class="chip" draggable="true" data-v="không tan">không tan</div>
+      <div class="chip" draggable="true" data-v="nhiên liệu hóa thạch">nhiên liệu hóa thạch</div>
+      <div class="chip" draggable="true" data-v="hỗn hợp">hỗn hợp</div>
+    </div>
+    <div class="fill">• Dầu mỏ là <span class="slot" data-ans="nhiên liệu hóa thạch"></span> nằm trong <span class="slot" data-ans="vỏ Trái Đất"></span>.</div>
+    <div class="fill">• Dầu mỏ là <span class="slot" data-ans="hỗn hợp"></span> tự nhiên của nhiều chất, thành phần chủ yếu là các <span class="slot" data-ans="hydrocarbon"></span>.</div>
+    <div class="fill">• Dầu mỏ <span class="slot" data-ans="nhẹ hơn"></span> nước và <span class="slot" data-ans="không tan"></span> trong nước, nên khi tràn ra biển sẽ nổi thành vệt loang rộng trên mặt nước.</div>
+    <div class="hint">💡 Dầu mỏ là <b>nhiên liệu hóa thạch</b> nằm trong <b>vỏ Trái Đất</b>; là <b>hỗn hợp</b> tự nhiên của nhiều chất, thành phần chủ yếu là các <b>hydrocarbon</b>; <b>nhẹ hơn</b> nước và <b>không tan</b> trong nước.</div>
+  </div>
+
+  <div class="q"><h2><span>2</span>Quan sát Hình 25.1 (SGK) và điền vào bảng</h2>
+    <div class="row"><b>⛰️ Lớp trên cùng</b><select data-ans="khi"><option value="">Chọn…</option><option value="khi">Khí mỏ dầu</option><option value="dau">Dầu mỏ – hỗn hợp phức tạp của nhiều hydrocarbon…</option><option value="nuoc">Lớp nước mặn</option></select></div>
+    <div class="row"><b>🛢️ Lớp ở giữa</b><select data-ans="dau"><option value="">Chọn…</option><option value="khi">Khí mỏ dầu</option><option value="dau">Dầu mỏ – hỗn hợp phức tạp của nhiều hydrocarbon…</option><option value="nuoc">Lớp nước mặn</option></select></div>
+    <div class="row"><b>💧 Lớp dưới cùng</b><select data-ans="nuoc"><option value="">Chọn…</option><option value="khi">Khí mỏ dầu</option><option value="dau">Dầu mỏ – hỗn hợp phức tạp của nhiều hydrocarbon…</option><option value="nuoc">Lớp nước mặn</option></select></div>
+    <div class="hint">💡 Trên cùng: khí mỏ dầu · Ở giữa: hỗn hợp phức tạp của nhiều hydrocarbon và một lượng nhỏ các hợp chất khác (dầu mỏ) · Dưới cùng: lớp nước mặn.</div>
+  </div>
+
+  <div class="q"><h2><span>3</span>Khí mỏ dầu</h2>
+    <div class="fill">• Khí mỏ dầu còn được gọi là khí <input class="s" data-ans="đồng hành" placeholder="..."> .</div>
+    <div class="fill">• Thành phần chủ yếu: khí <input class="s" data-ans="methane|metan" placeholder="..."> (khoảng <input class="s" style="width:4rem" data-ans="75" placeholder="..">%) và một số hydrocarbon khí khác.</div>
+    <div class="hint">💡 Khí đồng hành · khí methane (khoảng 75%).</div>
+  </div>
+
+  <div class="q"><h2><span>4</span>Dầu thô khi cháy sẽ tạo ra sản phẩm gì? Vì sao?</h2>
+    <textarea data-open data-hint="Dầu thô khi cháy luôn tạo CO₂ và H₂O. Vì thành phần chủ yếu của dầu thô là hydrocarbon (chứa C và H) nên sản phẩm cháy luôn có CO₂ và H₂O." placeholder="Viết câu trả lời của em…"></textarea>
+    <div class="hint">💡 Sản phẩm: <b>CO₂ và H₂O</b>. Vì dầu thô có thành phần chủ yếu là hydrocarbon nên sản phẩm cháy luôn có CO₂ và H₂O.</div>
+  </div>
+
+  <div class="q"><h2><span>5</span>Vì sao dầu mỏ, khí mỏ dầu được gọi là nhiên liệu hóa thạch?</h2>
+    <textarea data-open data-hint="Dầu mỏ tập trung thành các mỏ dầu trong lòng đất (vỏ Trái Đất). Chúng là nhiên liệu hóa thạch vì hình thành từ xác sinh vật qua thời gian rất dài, dưới tác dụng của nhiệt độ và áp suất." placeholder="Viết câu trả lời của em…"></textarea>
+    <div class="hint">💡 Hình thành từ <b>xác sinh vật</b> qua thời gian rất dài, dưới tác dụng của <b>nhiệt độ và áp suất</b>.</div>
+  </div>
+</section>
+
+<!-- ===== PHIẾU 2 ===== -->
+<section class="sheet p2" id="s2">
+  <h1>💨 Phiếu học tập số 2</h1>
+  <p class="sub">Khí thiên nhiên</p>
+  <div class="who"><label>Họ và tên<input type="text" placeholder="Nguyễn Văn A"></label><label>Lớp<input type="text" placeholder="9/1"></label></div>
+
+  <div class="q"><h2><span>6</span>Điền từ còn thiếu vào chỗ trống</h2>
+    <div class="bank">
+      <div class="chip" draggable="true" data-v="methane">methane</div>
+      <div class="chip" draggable="true" data-v="bùn đáy ao">bùn đáy ao</div>
+      <div class="chip" draggable="true" data-v="nitrogen">nitrogen</div>
+      <div class="chip" draggable="true" data-v="lòng đất">lòng đất</div>
+      <div class="chip" draggable="true" data-v="carbon dioxide">carbon dioxide</div>
+      <div class="chip" draggable="true" data-v="mỏ khí">mỏ khí</div>
+    </div>
+    <div class="fill">• Khí thiên nhiên cũng là nhiên liệu hóa thạch nằm dưới <span class="slot" data-ans="lòng đất"></span>.</div>
+    <div class="fill">• Trong tự nhiên, khí thiên nhiên tập trung trong các <span class="slot" data-ans="mỏ khí"></span> hoặc rải rác thoát ra từ lớp <span class="slot" data-ans="bùn đáy ao"></span>.</div>
+    <div class="fill">• Thành phần chủ yếu của khí thiên nhiên là khí <span class="slot" data-ans="methane"></span> (CH₄). Ngoài ra còn có một lượng nhỏ <span class="slot" data-ans="carbon dioxide|nitrogen" data-rev="carbon dioxide"></span> và <span class="slot" data-ans="nitrogen|carbon dioxide" data-rev="nitrogen"></span>.</div>
+    <div class="hint">💡 Lòng đất · mỏ khí · bùn đáy ao · methane · carbon dioxide và nitrogen (hai chỗ cuối đổi thứ tự cũng đúng).</div>
+  </div>
+
+  <div class="q"><h2><span>7</span>Khi khoan xuống mỏ khí thiên nhiên, khí có thể phun lên mặt đất. Theo em, vì sao khí thiên nhiên có thể tự phun lên mà không cần bơm?</h2>
+    <textarea data-open data-hint="Do khí thiên nhiên bị nén dưới áp suất cao trong các lớp đất đá. Khi khoan giếng, áp suất trong mỏ đẩy khí theo giếng khoan lên mặt đất." placeholder="Viết câu trả lời của em…"></textarea>
+    <div class="hint">💡 Khí bị nén dưới <b>áp suất cao</b> trong các lớp đất đá. Khi khoan giếng, áp suất trong mỏ đẩy khí theo giếng khoan lên mặt đất.</div>
+  </div>
+</section>
+
+
+</div>
+
+<div id="s3">
+<div class="wrap">
+  <header>
+    <h1>Phiếu học tập số 3</h1>
+    <p class="hint">Đọc mục 2. Phương pháp khai thác và chế biến, SGK trang 115 và quan sát Bảng 25.1</p>
+    <p class="how">Kéo thả để làm bài. Trên điện thoại hoặc máy tính bảng, bạn có thể chạm vào một mục rồi chạm vào ô trống. Bấm <b>Kiểm tra</b> ở từng câu để chấm điểm.</p>
+  </header>
+
+  <div class="scorebar">
+    <div class="sb-text"><strong id="scoreText">Đúng 0/14</strong><span>Câu 9 tự đối chiếu đáp án mẫu</span></div>
+    <div class="sb-bar"><i id="scoreFill"></i></div>
+  </div>
+
+  <main id="app"></main>
+
+  <div class="final">
+    <button class="btn primary" id="btnAll" type="button">Kiểm tra tất cả</button>
+    <button class="btn" id="btnResetAll" type="button">Làm lại tất cả</button>
+  </div>
+  <div class="summary" id="summary" role="status" aria-live="polite"></div>
+</div>
+</div>
+
+<div id="p45">
+<!-- ============ PHIẾU 4 ============ -->
+<section class="sheet" id="s4">
+  <h1>🔥 Phiếu học tập số 4</h1>
+  <p class="sub">Nhiên liệu quanh ta – trạng thái và phân loại</p>
+  <div class="who"><label>Họ và tên<input type="text" placeholder="Nguyễn Văn A"></label><label>Lớp<input type="text" placeholder="9/1"></label></div>
+
+  <div class="q"><h2><span>12</span>Trạng thái của nhiên liệu ở điều kiện thường</h2>
+    <div class="row"><b>🪵 Gỗ</b><div class="pills" data-ans="Rắn"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>⚫ Than đá</b><div class="pills" data-ans="Rắn"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>⛽ Xăng</b><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>🛢️ Dầu diesel</b><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>🌱 Xăng sinh học</b><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>💨 Khí thiên nhiên, khí mỏ dầu</b><div class="pills" data-ans="Khí"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <p class="fill">➜ Nhiên liệu là những chất <input data-ans="cháy được|dễ cháy" placeholder="..."> , khi cháy <input data-ans="tỏa|toả|tỏa ra|toả ra" placeholder="..."> nhiệt và phát <input data-ans="sáng|ánh sáng" placeholder="..."> .</p>
+    <div class="hint">💡 Chất cháy được; khi cháy tỏa nhiệt và phát sáng.</div>
+  </div>
+
+  <div class="q"><h2><span>13</span>Phân loại nhiên liệu</h2>
+    <p style="margin:0 0 8px;font-style:italic">gỗ · than đá · xăng · dầu diesel · ethanol · hydrogen · methane · propane · butane · khí thiên nhiên</p>
+    <div class="cols2">
+      <div class="row"><b>Gỗ</b><div class="pills" data-ans="Rắn"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Than đá</b><div class="pills" data-ans="Rắn"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Xăng</b><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Dầu diesel</b><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Ethanol</b><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Hydrogen</b><div class="pills" data-ans="Khí"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Methane</b><div class="pills" data-ans="Khí"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Propane</b><div class="pills" data-ans="Khí"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Butane</b><div class="pills" data-ans="Khí"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+      <div class="row"><b>Khí thiên nhiên</b><div class="pills" data-ans="Khí"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    </div>
+    <div class="hint">💡 Rắn: gỗ, than đá · Lỏng: xăng, dầu diesel, ethanol · Khí: hydrogen, methane, propane, butane, khí thiên nhiên.</div>
+  </div>
+
+  <div class="q"><h2><span>14</span>Đúng hay sai? Nếu sai, hãy sửa lại</h2>
+    <p class="qnote">Chọn Đúng hoặc Sai cho từng ý. Nếu chọn Sai, viết phần đúng vào ô bên cạnh. Nếu chọn Đúng, để trống ô đó.</p>
+    <div class="row j" data-unit><b>1. Ethanol là nhiên liệu khí</b><div class="pills" data-ans="Sai"><button>Đúng</button><button>Sai</button></div><input data-ans="lỏng" placeholder="Sửa lại thành…" aria-label="Sửa lại ý 1"></div>
+    <div class="row j" data-unit><b>2. Hydrogen là nhiên liệu khí</b><div class="pills" data-ans="Đúng"><button>Đúng</button><button>Sai</button></div><input data-empty placeholder="Sửa lại thành…" aria-label="Sửa lại ý 2"></div>
+    <div class="row j" data-unit><b>3. Than đá là nhiên liệu lỏng</b><div class="pills" data-ans="Sai"><button>Đúng</button><button>Sai</button></div><input data-ans="rắn" placeholder="Sửa lại thành…" aria-label="Sửa lại ý 3"></div>
+    <div class="row j" data-unit><b>4. Propane và butane là nhiên liệu khí</b><div class="pills" data-ans="Đúng"><button>Đúng</button><button>Sai</button></div><input data-empty placeholder="Sửa lại thành…" aria-label="Sửa lại ý 4"></div>
+    <div class="row j" data-unit><b>5. Nhiên liệu khi cháy tỏa nhiệt và phát sáng</b><div class="pills" data-ans="Đúng"><button>Đúng</button><button>Sai</button></div><input data-empty placeholder="Sửa lại thành…" aria-label="Sửa lại ý 5"></div>
+    <div class="hint">💡 Ý 1 sai → ethanol là nhiên liệu <b>lỏng</b>. Ý 3 sai → than đá là nhiên liệu <b>rắn</b>. Các ý 2, 4, 5 đúng.</div>
+  </div>
+
+</section>
+
+<!-- ============ PHIẾU 5 ============ -->
+<section class="sheet blue" id="s5">
+  <h1>🚗 Phiếu học tập số 5</h1>
+  <p class="sub">Nhiên liệu trong đời sống và sử dụng an toàn</p>
+  <div class="who"><label>Họ và tên<input type="text" placeholder="Nguyễn Văn A"></label><label>Lớp<input type="text" placeholder="9/1"></label></div>
+
+  <div class="q"><h2><span>15</span>Nối nhiên liệu (cột A) với ứng dụng (cột B)</h2>
+    <p style="margin:0 0 8px;font-size:14px;font-weight:700">👆 Kéo ứng dụng thả vào ô bên cạnh mỗi nhiên liệu (hoặc bấm chọn ứng dụng rồi bấm vào ô).</p>
+    <div class="match">
+      <div>
+        <div class="mrow"><b>1. Xăng</b><div class="slot" data-ans="c"></div></div>
+        <div class="mrow"><b>2. Dầu hỏa</b><div class="slot" data-ans="d"></div></div>
+        <div class="mrow"><b>3. Gas</b><div class="slot" data-ans="a"></div></div>
+        <div class="mrow"><b>4. Than đá</b><div class="slot" data-ans="b"></div></div>
+      </div>
+      <div class="bank">
+        <div class="chip" draggable="true" data-v="b">b. Nhà máy nhiệt điện, công nghiệp luyện kim</div>
+        <div class="chip" draggable="true" data-v="d">d. Động cơ phản lực của máy bay</div>
+        <div class="chip" draggable="true" data-v="a">a. Nấu ăn, sưởi ấm, vận hành các thiết bị máy</div>
+        <div class="chip" draggable="true" data-v="c">c. Xe máy, ô tô</div>
+      </div>
+    </div>
+    <div class="hint">💡 1 – c · 2 – d · 3 – a · 4 – b</div>
+  </div>
+
+  <div class="q"><h2><span>16</span>Nhiên liệu ở Việt Nam hiện nay rất đa dạng</h2>
+    <div class="row"><b>🍳 Bếp nấu ăn</b><input data-open data-hint="Gas / củi / than" placeholder="Nhiên liệu đang dùng" size="18"><div class="pills" data-ans="Khí|Rắn"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>🛵 Xe máy</b><input data-open data-hint="Xăng" placeholder="Nhiên liệu đang dùng" size="18"><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <div class="row"><b>🚗 Ô tô</b><input data-open data-hint="Xăng / dầu diesel" placeholder="Nhiên liệu đang dùng" size="18"><div class="pills" data-ans="Lỏng"><button>Rắn</button><button>Lỏng</button><button>Khí</button></div></div>
+    <p style="margin:10px 0 4px;font-weight:800">➜ Đề xuất một biện pháp sử dụng các nhiên liệu này an toàn và hiệu quả:</p>
+    <textarea data-open data-hint="Đặt bình gas nơi thoáng, xa nguồn nhiệt, kiểm tra rò rỉ thường xuyên; không đốt than, củi trong không gian kín. Bảo dưỡng xe định kỳ, tắt máy khi dừng lâu, ưu tiên phương tiện công cộng." placeholder="Viết ý của em…"></textarea>
+    <div class="hint">💡 Phần này là câu trả lời mở: gas/củi/than ở bếp; xăng cho xe máy; xăng hoặc dầu diesel cho ô tô. Bấm “Xem đáp án” để điền biện pháp gợi ý vào ô trống.</div>
+  </div>
+
+  <div class="q"><h2><span>17</span>Giải thích</h2>
+    <p style="margin:0 0 4px;font-weight:800">a) Vì sao không nên đốt than, gas trong không gian kín?</p>
+    <textarea data-open data-hint="Đốt than, gas tiêu thụ khí oxygen làm không khí thiếu oxygen, gây khó thở. Cháy không hoàn toàn tạo khí carbon monoxide (CO) rất độc, có thể gây ngộ độc, thậm chí tử vong." placeholder="Viết câu trả lời…"></textarea>
+    <p style="margin:10px 0 4px;font-weight:800">b) Vì sao bình gas cần đặt nơi thoáng, xa nguồn nhiệt và thường xuyên kiểm tra rò rỉ?</p>
+    <textarea data-open data-hint="Nơi thoáng giúp gas không tích tụ khi rò rỉ, hạn chế nguy cơ cháy nổ. Tránh làm bình nóng lên, tăng áp suất trong bình gây nổ. Kiểm tra rò rỉ thường xuyên để phát hiện, xử lí kịp thời, phòng cháy nổ và ngộ độc khí gas." placeholder="Viết câu trả lời…"></textarea>
+    <div class="hint">💡 a) Thiếu oxygen → khó thở; cháy không hoàn toàn sinh khí CO rất độc → ngộ độc. b) Gas không tích tụ, tránh nổ do nóng và tăng áp suất, phát hiện rò rỉ kịp thời.</div>
+  </div>
+
+</section>
+
+
+</div>
+
+<script>
+(function(){
+
+const BAR='<div class="bar"><button class="btn" data-act="check">✅ Kiểm tra</button><button class="btn alt" data-act="reset">🔄 Làm lại</button><button class="btn alt" data-act="reveal">💡 Xem đáp án</button><span class="msg"></span></div>';
+document.querySelectorAll('#p12 .q').forEach(q=>q.insertAdjacentHTML('beforeend',BAR));
+const norm=s=>(s||'').toLowerCase().replace(/\s+/g,' ').trim();
+const isS=el=>el.classList.contains('slot');
+const val=el=>isS(el)?((el.querySelector('.chip')||{dataset:{}}).dataset.v||''):el.value;
+const answers=el=>el.dataset.ans.split('|');
+function place(slot,chip){
+  const bank=chip.closest('.q').querySelector('.bank'),old=slot.querySelector('.chip');
+  if(old&&old!==chip)bank.appendChild(old);
+  slot.appendChild(chip);chip.classList.remove('sel');slot.classList.remove('ok','bad');
+}
+function setv(el,v){
+  if(isS(el)){const c=[...el.closest('.q').querySelectorAll('.chip')].find(x=>x.dataset.v===v);if(c)place(el,c)}
+  else el.value=v;
+}
+function correct(el){
+  const v=norm(val(el));if(!v)return false;
+  const a=answers(el).map(norm);
+  return el.tagName==='INPUT'?a.includes(v):a.includes(v);
+}
+const clearMarks=q=>q.querySelectorAll('.ok,.bad').forEach(e=>e.classList.remove('ok','bad'));
+let drag=null;
+document.addEventListener('dragstart',e=>{drag=e.target.closest&&e.target.closest('#p12 .chip');if(drag)e.dataTransfer.setData('text/plain',drag.dataset.v)});
+document.addEventListener('dragover',e=>{const t=e.target.closest&&e.target.closest('#p12 .slot,#p12 .bank');if(t&&drag){e.preventDefault();t.classList.add('over')}});
+document.addEventListener('dragleave',e=>{const t=e.target.closest&&e.target.closest('#p12 .slot,#p12 .bank');if(t)t.classList.remove('over')});
+document.addEventListener('drop',e=>{
+  const t=e.target.closest&&e.target.closest('#p12 .slot,#p12 .bank');if(!t||!drag)return;
+  e.preventDefault();t.classList.remove('over');
+  if(drag.closest('.q')!==t.closest('.q'))return;
+  if(isS(t))place(t,drag);else t.appendChild(drag);
+});
+document.addEventListener('dragend',()=>{drag=null;document.querySelectorAll('#p12 .over').forEach(x=>x.classList.remove('over'))});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('#p12'))return;
+  const sel=document.querySelector('#p12 .chip.sel'),slot=e.target.closest('.slot');
+  if(slot&&sel&&sel.closest('.q')===slot.closest('.q')){place(slot,sel);return}
+  const chip=e.target.closest('.chip');
+  if(chip){
+    if(isS(chip.parentNode)){chip.parentNode.classList.remove('ok','bad');chip.closest('.q').querySelector('.bank').appendChild(chip)}
+    else{const was=chip.classList.contains('sel');document.querySelectorAll('.chip.sel').forEach(c=>c.classList.remove('sel'));if(!was)chip.classList.add('sel')}
+    return;
+  }
+  const bank=e.target.closest('.bank');
+  if(bank&&sel&&sel.closest('.q')===bank.closest('.q')){bank.appendChild(sel);sel.classList.remove('sel');return}
+  const b=e.target.closest('[data-act]');if(!b)return;
+  const q=b.closest('.q'),msg=q.querySelector('.msg'),items=[...q.querySelectorAll('[data-ans]')];msg.className='msg';
+  if(b.dataset.act==='check'){
+    clearMarks(q);
+    if(!items.length){msg.textContent='Câu tự luận – viết xong rồi bấm “Xem đáp án” để so sánh nhé ✍️';return}
+    let n=0;items.forEach(el=>{const ok=correct(el);if(ok)n++;el.classList.add(ok?'ok':'bad')});
+    msg.textContent=n===items.length?`🎉 Chính xác ${n}/${items.length}!`:`Đúng ${n}/${items.length} – thử lại nhé 💪`;msg.classList.add(n===items.length?'good':'wrong');
+  }
+  if(b.dataset.act==='reveal'){
+    clearMarks(q);
+    items.forEach(el=>setv(el,el.dataset.rev||answers(el)[0]));
+    q.classList.add('show');
+    msg.textContent='Em so sánh với bài làm của mình nhé ✨';
+  }
+  if(b.dataset.act==='reset'){
+    clearMarks(q);
+    q.querySelectorAll('select,textarea,input').forEach(x=>{x.value='';x.classList.remove('hinted')});
+    const bank=q.querySelector('.bank');
+    if(bank)q.querySelectorAll('.chip').forEach(c=>{c.classList.remove('sel');bank.appendChild(c)});
+    q.classList.remove('show');msg.textContent='';
+  }
+});
+document.addEventListener('input',e=>{e.target.classList.remove('hinted','ok','bad')});
+
+})();
+</script>
+<script>
+
+(function () {
+  'use strict';
+
+  var TOTAL = 14;
+  var groups = {};
+  var order = [];
+  var selected = null;
+  var drag = null;
+  var q9 = {};
+
+  /* ---------- tiện ích ---------- */
+  function el(tag, cls, text) {
+    var e = document.createElement(tag);
+    if (cls) e.className = cls;
+    if (text != null) e.textContent = text;
+    return e;
+  }
+  function shuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+  function btn(label, cls) {
+    var b = el('button', 'btn' + (cls ? ' ' + cls : ''), label);
+    b.type = 'button';
+    return b;
+  }
+
+  /* ---------- nhóm kéo thả ---------- */
+  function newGroup(id, bankWrap, bank, answers) {
+    var g = { id: id, bankWrap: bankWrap, bank: bank, answers: answers, slots: [], chips: [], correct: 0, resEl: null };
+    bankWrap.dataset.group = id;
+    bank.dataset.group = id;
+    groups[id] = g;
+    order.push(id);
+    return g;
+  }
+  function addSlot(g, s) {
+    s.dataset.group = g.id;
+    g.slots.push(s);
+    s.addEventListener('click', function () {
+      if (selected && selected.dataset.group === g.id && !slotChip(s)) place(selected, s);
+    });
+  }
+  function addChip(g, value, text, cls) {
+    var c = el('span', 'chip' + (cls ? ' ' + cls : ''), text);
+    c.dataset.value = value;
+    c.dataset.group = g.id;
+    g.chips.push(c);
+    return c;
+  }
+  function bankBlock(label, bankCls) {
+    var wrap = el('div', 'bank-wrap');
+    wrap.appendChild(el('div', 'bank-label', label));
+    var bank = el('div', 'bank' + (bankCls ? ' ' + bankCls : ''));
+    wrap.appendChild(bank);
+    return { wrap: wrap, bank: bank };
+  }
+  function fillBank(g) {
+    shuffle(g.chips.slice()).forEach(function (c) { g.bank.appendChild(c); });
+  }
+  function section(badge, prompt) {
+    var card = el('section', 'card');
+    var head = el('div', 'q-head');
+    head.appendChild(el('span', 'q-badge', badge));
+    head.appendChild(el('p', 'q-prompt', prompt));
+    card.appendChild(head);
+    return card;
+  }
+
+  function slotChip(s) { return s.querySelector('.chip'); }
+  function inSlot(c) { return !!(c.parentElement && c.parentElement.classList.contains('slot')); }
+  function clearMarks(s) { s.classList.remove('correct', 'wrong'); }
+  function clearRes(g) { if (g.resEl) { g.resEl.className = 'res'; g.resEl.textContent = ''; } }
+  function setRes(g, kind, text) { g.resEl.className = 'res ' + kind; g.resEl.textContent = text; }
+  function deselect() { if (selected) { selected.classList.remove('selected'); selected = null; } }
+  function select(c) { deselect(); selected = c; c.classList.add('selected'); }
+
+  function updateScore() {
+    var sum = 0;
+    order.forEach(function (id) { sum += groups[id].correct; });
+    document.getElementById('scoreText').textContent = 'Đúng ' + sum + '/' + TOTAL;
+    document.getElementById('scoreFill').style.width = (sum / TOTAL * 100) + '%';
+  }
+
+  function toBank(c) {
+    var g = groups[c.dataset.group];
+    var from = c.parentElement;
+    g.bank.appendChild(c);
+    if (from && from.classList.contains('slot')) clearMarks(from);
+  }
+  function place(c, slot) {
+    if (c.dataset.group !== slot.dataset.group) return;
+    var g = groups[c.dataset.group];
+    var old = slotChip(slot);
+    if (old && old !== c) {
+      if (old.classList.contains('locked')) return;
+      toBank(old);
+    }
+    var from = c.parentElement;
+    slot.appendChild(c);
+    if (from && from !== slot && from.classList.contains('slot')) clearMarks(from);
+    clearMarks(slot);
+    deselect();
+    clearRes(g);
+  }
+
+  /* ---------- nút từng câu ---------- */
+  function checkGroup(g) {
+    deselect();
+    var ok = 0;
+    g.slots.forEach(function (s, i) {
+      clearMarks(s);
+      void s.offsetWidth;
+      var c = slotChip(s);
+      if (c && c.dataset.value === g.answers[i]) {
+        s.classList.add('correct');
+        c.classList.add('locked');
+        ok++;
+      } else {
+        s.classList.add('wrong');
+      }
+    });
+    g.correct = ok;
+    var n = g.slots.length;
+    if (ok === n) setRes(g, 'good', 'Chính xác! ' + ok + '/' + n);
+    else setRes(g, 'try', 'Đúng ' + ok + '/' + n + '. Sửa các ô màu đỏ rồi bấm Kiểm tra lại.');
+    updateScore();
+    return ok;
+  }
+  function resetGroup(g) {
+    deselect();
+    g.chips.forEach(function (c) { c.classList.remove('locked'); });
+    g.slots.forEach(clearMarks);
+    fillBank(g);
+    g.correct = 0;
+    clearRes(g);
+    updateScore();
+  }
+  function revealGroup(g) {
+    deselect();
+    g.chips.forEach(function (c) { c.classList.remove('locked'); });
+    g.slots.forEach(clearMarks);
+    g.answers.forEach(function (ans, i) {
+      var c = g.chips.filter(function (x) { return x.dataset.value === ans; })[0];
+      place(c, g.slots[i]);
+    });
+    g.slots.forEach(function (s) {
+      s.classList.add('correct');
+      slotChip(s).classList.add('locked');
+    });
+    g.correct = 0;
+    setRes(g, 'good', 'Đây là đáp án đúng. Bấm Làm lại để tự thử (xem đáp án thì không được tính điểm).');
+    updateScore();
+  }
+  function actions(g, card) {
+    var row = el('div', 'actions');
+    var bCheck = btn('Kiểm tra', 'primary');
+    var bReset = btn('Làm lại');
+    var bReveal = btn('Xem đáp án');
+    var res = el('span', 'res');
+    res.setAttribute('role', 'status');
+    res.setAttribute('aria-live', 'polite');
+    g.resEl = res;
+    bCheck.addEventListener('click', function () { checkGroup(g); });
+    bReset.addEventListener('click', function () { resetGroup(g); });
+    bReveal.addEventListener('click', function () { revealGroup(g); });
+    row.appendChild(bCheck); row.appendChild(bReset); row.appendChild(bReveal); row.appendChild(res);
+    card.appendChild(row);
+  }
+
+  /* ---------- dựng các câu ---------- */
+  var app = document.getElementById('app');
+
+  // Câu 8
+  (function () {
+    var items = [
+      { text: 'Vận chuyển dầu thô đến nhà máy lọc dầu bằng ống dẫn hoặc tàu chở dầu.', answer: '3' },
+      { text: 'Xử lí dầu thô ở nhà máy lọc dầu, chủ yếu bằng phương pháp chưng cất, để thu nhiều sản phẩm khác nhau.', answer: '4' },
+      { text: 'Khoan, thu dầu và khí.', answer: '1' },
+      { text: 'Loại bỏ tạp chất để thu được dầu thô.', answer: '2' }
+    ];
+    var card = section('Câu 8', 'Đánh số 1 → 4 để sắp xếp các giai đoạn khai thác, chế biến theo đúng thứ tự.');
+    var bb = bankBlock('Kéo số vào ô trống ở đầu mỗi dòng', '');
+    var g = newGroup('q8', bb.wrap, bb.bank, items.map(function (i) { return i.answer; }));
+    ['1', '2', '3', '4'].forEach(function (n) { addChip(g, n, n, 'num'); });
+    card.appendChild(bb.wrap);
+    var list = el('div', 'order-list');
+    items.forEach(function (it) {
+      var row = el('div', 'order-row');
+      var s = el('span', 'slot round');
+      addSlot(g, s);
+      row.appendChild(s);
+      row.appendChild(el('p', null, it.text));
+      list.appendChild(row);
+    });
+    card.appendChild(list);
+    actions(g, card);
+    app.appendChild(card);
+    fillBank(g);
+  })();
+
+  // Câu 9
+  (function () {
+    var card = section('Câu 9', 'Vì sao chưng cất dầu thô lại thu được nhiều sản phẩm khác nhau?');
+    var ta = document.createElement('textarea');
+    ta.placeholder = 'Viết câu trả lời của em ở đây…';
+    ta.setAttribute('aria-label', 'Câu trả lời câu 9');
+    card.appendChild(ta);
+
+    var model = el('div', 'model');
+    var b = el('b', null, 'Đáp án gợi ý');
+    var p = el('p', null, 'Vì dầu thô là hỗn hợp của nhiều hydrocarbon có nhiệt độ sôi khác nhau. Khi chưng cất, mỗi thành phần bay hơi và ngưng tụ ở một khoảng nhiệt độ riêng, nên tách được thành nhiều sản phẩm (phân đoạn) khác nhau như khí hóa lỏng, xăng, dầu hỏa, dầu diesel,…');
+    var kwrow = el('div', 'kwrow');
+    model.appendChild(b); model.appendChild(p); model.appendChild(kwrow);
+    card.appendChild(model);
+
+    var KW = [
+      { label: 'hỗn hợp', re: /hỗn hợp/ },
+      { label: 'hydrocarbon', re: /hydrocarbon|hiđrocacbon|hidrocacbon/ },
+      { label: 'nhiệt độ sôi', re: /nhiệt độ sôi/ }
+    ];
+    var row = el('div', 'actions');
+    var bShow = btn('Xem đáp án mẫu', 'primary');
+    var bClear = btn('Xóa bài viết');
+    bShow.addEventListener('click', function () {
+      var txt = ta.value.normalize('NFC').toLowerCase();
+      kwrow.innerHTML = '';
+      kwrow.appendChild(el('span', null, txt.trim() ? 'Từ khóa trong đáp án mẫu:' : 'Hãy thử viết câu trả lời của em trước, rồi so sánh với từ khóa:'));
+      KW.forEach(function (k) {
+        var hit = txt.trim() && k.re.test(txt);
+        kwrow.appendChild(el('span', 'kw ' + (hit ? 'hit' : 'miss'), k.label));
+      });
+      model.classList.add('show');
+    });
+    bClear.addEventListener('click', function () { ta.value = ''; model.classList.remove('show'); });
+    row.appendChild(bShow); row.appendChild(bClear);
+    card.appendChild(row);
+    app.appendChild(card);
+    q9.ta = ta; q9.model = model;
+  })();
+
+  // Câu 10
+  (function () {
+    var A = [
+      { label: '1. Khí hóa lỏng', answer: 'd' },
+      { label: '2. Xăng', answer: 'e' },
+      { label: '3. Dầu hỏa', answer: 'g' },
+      { label: '4. Dầu diesel', answer: 'b' },
+      { label: '5. Dầu bôi trơn', answer: 'a' },
+      { label: '6. Nhựa đường', answer: 'c' }
+    ];
+    var B = [
+      { v: 'a', t: 'Chất bôi trơn' },
+      { v: 'b', t: 'Nhiên liệu cho động cơ diesel và các lò nung' },
+      { v: 'c', t: 'Bề mặt đường nhựa, giấy dầu lợp mái' },
+      { v: 'd', t: 'Nhiên liệu (sưởi ấm, bếp gas)' },
+      { v: 'e', t: 'Nhiên liệu cho động cơ đốt trong (xe máy, ô tô,...)' },
+      { v: 'g', t: 'Nhiên liệu cho động cơ phản lực' }
+    ];
+    var card = section('Câu 10', 'Nối sản phẩm chưng cất (cột A) với ứng dụng (cột B), theo Bảng 25.1.');
+    var grid = el('div', 'match');
+    var left = el('div', null);
+    left.appendChild(el('p', 'colhead', 'Cột A (Phân đoạn)'));
+    var bb = bankBlock('Cột B (Ứng dụng): kéo vào ô bên cạnh mỗi phân đoạn', 'stack');
+    var g = newGroup('q10', bb.wrap, bb.bank, A.map(function (a) { return a.answer; }));
+    B.forEach(function (b) { addChip(g, b.v, b.v + '. ' + b.t, 'wide'); });
+    A.forEach(function (a) {
+      var row = el('div', 'match-row');
+      row.appendChild(el('div', 'alabel', a.label));
+      var s = el('span', 'slot block');
+      s.dataset.ph = 'Kéo ứng dụng vào đây';
+      addSlot(g, s);
+      row.appendChild(s);
+      left.appendChild(row);
+    });
+    grid.appendChild(left);
+    grid.appendChild(bb.wrap);
+    card.appendChild(grid);
+    actions(g, card);
+    app.appendChild(card);
+    fillBank(g);
+  })();
+
+  // Câu 11
+  (function () {
+    var paras = [
+      ['Khí thiên nhiên được khai thác bằng cách ', 0, ' xuống mỏ khí, khí sẽ ', 1, ' do áp suất ở mỏ khí lớn hơn ', 2, '.'],
+      ['Sau đó, khí được vận chuyển đến ', 3, ' để xử lí đạt chất lượng mong muốn trước khi phân phối đến các điểm tiêu thụ.']
+    ];
+    var answers = ['khoan', 'tự phun lên', 'áp suất khí quyển', 'nhà máy'];
+    var card = section('Câu 11', 'Điền từ còn thiếu vào chỗ trống sau.');
+    card.appendChild(el('p', 'q-sub', 'Từ gợi ý: khoan · áp suất khí quyển · nhà máy · tự phun lên'));
+    var bb = bankBlock('Kéo từ vào chỗ trống', '');
+    var g = newGroup('q11', bb.wrap, bb.bank, answers);
+    answers.forEach(function (w) { addChip(g, w, w, ''); });
+    card.appendChild(bb.wrap);
+    var fill = el('div', 'fill');
+    var slotsByIndex = [];
+    paras.forEach(function (parts) {
+      var p = el('p', null);
+      parts.forEach(function (part) {
+        if (typeof part === 'string') {
+          p.appendChild(document.createTextNode(part));
+        } else {
+          var s = el('span', 'slot');
+          slotsByIndex[part] = s;
+          p.appendChild(s);
+        }
+      });
+      fill.appendChild(p);
+    });
+    slotsByIndex.forEach(function (s) { addSlot(g, s); });
+    card.appendChild(fill);
+    actions(g, card);
+    app.appendChild(card);
+    fillBank(g);
+  })();
+
+  /* ---------- chạm (không kéo) ---------- */
+  function tap(c) {
+    if (c.classList.contains('locked')) return;
+    if (inSlot(c)) {
+      if (selected && selected !== c && selected.dataset.group === c.dataset.group) {
+        place(selected, c.parentElement);
+        return;
+      }
+      toBank(c);
+      clearRes(groups[c.dataset.group]);
+      return;
+    }
+    if (selected === c) deselect(); else select(c);
+  }
+
+  /* ---------- kéo thả bằng pointer events ---------- */
+  function clearOver() {
+    Array.prototype.forEach.call(document.querySelectorAll('#s3 .over'), function (n) { n.classList.remove('over'); });
+  }
+  function targetAt(x, y, gid) {
+    var e = document.elementFromPoint(x, y);
+    if (!e) return null;
+    var s = e.closest('.slot');
+    if (s && s.dataset.group === gid) return s;
+    var bw = e.closest('.bank-wrap');
+    if (bw && bw.dataset.group === gid) return bw;
+    return null;
+  }
+  function autoScroll() {
+    if (!drag || !drag.ghost) return;
+    if (drag.y < 80) window.scrollBy(0, -14);
+    else if (drag.y > window.innerHeight - 80) window.scrollBy(0, 14);
+    window.requestAnimationFrame(autoScroll);
+  }
+
+  document.addEventListener('pointerdown', function (e) {
+    if (drag) return;
+    var c = e.target.closest && e.target.closest('#s3 .chip');
+    if (!c || c.classList.contains('ghost') || c.classList.contains('locked')) return;
+    if (e.pointerType === 'mouse' && e.button !== 0) return;
+    drag = { chip: c, pid: e.pointerId, sx: e.clientX, sy: e.clientY, x: e.clientX, y: e.clientY, ghost: null, offX: 0, offY: 0 };
+    try { c.setPointerCapture(e.pointerId); } catch (err) {}
+  });
+
+  document.addEventListener('pointermove', function (e) {
+    if (!drag || e.pointerId !== drag.pid) return;
+    drag.x = e.clientX; drag.y = e.clientY;
+    if (!drag.ghost && Math.hypot(e.clientX - drag.sx, e.clientY - drag.sy) > 6) {
+      var r = drag.chip.getBoundingClientRect();
+      var gh = drag.chip.cloneNode(true);
+      gh.classList.remove('selected', 'dragging', 'locked');
+      gh.classList.add('ghost');
+      gh.style.width = r.width + 'px';
+      document.getElementById('s3').appendChild(gh);
+      drag.ghost = gh;
+      drag.offX = drag.sx - r.left;
+      drag.offY = drag.sy - r.top;
+      drag.chip.classList.add('dragging');
+      deselect();
+      window.requestAnimationFrame(autoScroll);
+    }
+    if (drag.ghost) {
+      drag.ghost.style.left = (e.clientX - drag.offX) + 'px';
+      drag.ghost.style.top = (e.clientY - drag.offY) + 'px';
+      clearOver();
+      var t = targetAt(e.clientX, e.clientY, drag.chip.dataset.group);
+      if (t) t.classList.add('over');
+    }
+  });
+
+  function endDrag(e, cancelled) {
+    if (!drag || e.pointerId !== drag.pid) return;
+    var d = drag;
+    drag = null;
+    clearOver();
+    if (d.ghost) {
+      d.ghost.remove();
+      d.chip.classList.remove('dragging');
+      if (cancelled) return;
+      var t = targetAt(e.clientX, e.clientY, d.chip.dataset.group);
+      if (t && t.classList.contains('slot')) {
+        place(d.chip, t);
+      } else if (inSlot(d.chip)) {
+        toBank(d.chip);
+        clearRes(groups[d.chip.dataset.group]);
+      }
+    } else if (!cancelled) {
+      tap(d.chip);
+    }
+  }
+  document.addEventListener('pointerup', function (e) { endDrag(e, false); });
+  document.addEventListener('pointercancel', function (e) { endDrag(e, true); });
+
+  /* ---------- nút chung ---------- */
+  var summary = document.getElementById('summary');
+  document.getElementById('btnAll').addEventListener('click', function () {
+    var names = { q8: 'Câu 8', q10: 'Câu 10', q11: 'Câu 11' };
+    var total = 0;
+    var ul = el('ul', null);
+    order.forEach(function (id) {
+      var g = groups[id];
+      var ok = checkGroup(g);
+      total += ok;
+      ul.appendChild(el('li', null, names[id] + ': ' + ok + '/' + g.slots.length));
+    });
+    summary.innerHTML = '';
+    var head = el('strong', null, 'Kết quả: ' + total + '/' + TOTAL);
+    summary.appendChild(head);
+    summary.appendChild(ul);
+    var pct = total / TOTAL;
+    var msg = pct === 1 ? 'Xuất sắc! Bạn làm đúng tất cả các câu tự chấm.' :
+              pct >= 0.7 ? 'Khá tốt! Sửa các ô màu đỏ rồi bấm Kiểm tra tất cả lần nữa.' :
+              'Cố lên! Đọc lại mục 2 SGK trang 115 và Bảng 25.1 rồi thử lại.';
+    summary.appendChild(el('p', null, msg + ' Câu 9 là câu tự luận, hãy tự đối chiếu với đáp án mẫu.'));
+    summary.className = 'summary show' + (pct === 1 ? ' good' : '');
+  });
+  document.getElementById('btnResetAll').addEventListener('click', function () {
+    order.forEach(function (id) { resetGroup(groups[id]); });
+    q9.ta.value = '';
+    q9.model.classList.remove('show');
+    summary.className = 'summary';
+    summary.innerHTML = '';
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  updateScore();
+})();
+
+</script>
+<script>
+
+const BAR='<div class="bar"><button class="btn" data-act="check">✅ Kiểm tra</button><button class="btn alt" data-act="reset">🔄 Làm lại</button><button class="btn alt" data-act="reveal">💡 Xem đáp án</button><span class="msg"></span></div>';
+document.querySelectorAll('#p45 .q').forEach(q=>q.insertAdjacentHTML('beforeend',BAR));
+const norm=s=>(s||'').toLowerCase().replace(/\s+/g,' ').trim();
+const isP=el=>el.classList.contains('pills'),isS=el=>el.classList.contains('slot');
+const val=el=>isP(el)?(el.querySelector('.on')||{}).textContent||'':isS(el)?((el.querySelector('.chip')||{dataset:{}}).dataset.v||''):el.value;
+const answers=el=>el.dataset.ans.split('|');
+function place(slot,chip){
+  const bank=chip.closest('.q').querySelector('.bank'),old=slot.querySelector('.chip');
+  if(old&&old!==chip)bank.appendChild(old);
+  slot.appendChild(chip);chip.classList.remove('sel');slot.classList.remove('ok','bad');
+}
+function setv(el,v){
+  if(isP(el))[...el.children].forEach(b=>b.classList.toggle('on',b.textContent===v));
+  else if(isS(el)){const c=el.closest('.q').querySelector('.chip[data-v="'+v+'"]');if(c)place(el,c)}
+  else el.value=v;
+}
+function correct(el){
+  const v=norm(val(el));if(!v)return false;
+  const a=answers(el).map(norm);
+  return el.tagName==='INPUT'?a.some(x=>v.includes(x)):a.includes(v);
+}
+const clearMarks=q=>q.querySelectorAll('.ok,.bad').forEach(e=>e.classList.remove('ok','bad'));
+/* kéo thả */
+let drag=null;
+document.addEventListener('dragstart',e=>{drag=e.target.closest&&e.target.closest('#p45 .chip');if(drag)e.dataTransfer.setData('text/plain',drag.dataset.v)});
+document.addEventListener('dragover',e=>{const t=e.target.closest&&e.target.closest('.slot,.bank');if(t&&drag){e.preventDefault();t.classList.add('over')}});
+document.addEventListener('dragleave',e=>{const t=e.target.closest&&e.target.closest('.slot,.bank');if(t)t.classList.remove('over')});
+document.addEventListener('drop',e=>{
+  const t=e.target.closest&&e.target.closest('.slot,.bank');if(!t||!drag)return;
+  e.preventDefault();t.classList.remove('over');
+  if(drag.closest('.q')!==t.closest('.q'))return;
+  if(isS(t))place(t,drag);else{t.appendChild(drag);}
+});
+document.addEventListener('dragend',()=>{drag=null;document.querySelectorAll('.over').forEach(x=>x.classList.remove('over'))});
+/* bấm */
+document.addEventListener('click',e=>{
+  if(e.target.closest('#s3,#p12'))return;
+  const sel=document.querySelector('#p45 .chip.sel');
+  const slot=e.target.closest('.slot');
+  if(slot&&sel&&sel.closest('.q')===slot.closest('.q')){place(slot,sel);return}
+  const chip=e.target.closest('.chip');
+  if(chip){
+    if(isS(chip.parentNode)){chip.parentNode.classList.remove('ok','bad');chip.closest('.q').querySelector('.bank').appendChild(chip)}
+    else{const was=chip.classList.contains('sel');document.querySelectorAll('.chip.sel').forEach(c=>c.classList.remove('sel'));if(!was)chip.classList.add('sel')}
+    return;
+  }
+  const bank=e.target.closest('.bank');
+  if(bank&&sel){bank.appendChild(sel);sel.classList.remove('sel');return}
+  const p=e.target.closest('.pills button');
+  if(p){const g=p.parentNode;[...g.children].forEach(b=>b.classList.remove('on'));p.classList.add('on');g.classList.remove('ok','bad');return}
+  const t=e.target.closest('.tab');
+  if(t){document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===t));
+    document.querySelectorAll('.sheet,#s3').forEach(s=>s.classList.toggle('active',s.id===t.dataset.go));document.body.classList.toggle('on3',t.dataset.go==='s3');document.body.classList.toggle('on12',/^s[12]$/.test(t.dataset.go));window.scrollTo(0,0);return}
+  const b=e.target.closest('[data-act]');if(!b)return;
+  const q=b.closest('.q'),msg=q.querySelector('.msg'),items=[...q.querySelectorAll('[data-ans]')];
+  if(b.dataset.act==='check'){
+    clearMarks(q);
+    const all=[...q.querySelectorAll('[data-ans],[data-empty]')];
+    if(!all.length){msg.textContent='Câu tự luận – bấm “Xem đáp án” để so sánh nhé ✍️';return}
+    const res=new Map();
+    all.forEach(el=>{
+      const empty=el.dataset.empty!==undefined;
+      const ok=empty?!norm(el.value):correct(el);
+      res.set(el,ok);
+      if(!(empty&&ok))el.classList.add(ok?'ok':'bad');
+    });
+    const units=[...q.querySelectorAll('[data-unit]')];
+    let n,t;
+    if(units.length){t=units.length;n=units.filter(u=>[...u.querySelectorAll('[data-ans],[data-empty]')].every(x=>res.get(x))).length}
+    else{t=all.length;n=all.filter(x=>res.get(x)).length}
+    msg.textContent=n===t?`🎉 Chính xác ${n}/${t}!`:`Đúng ${n}/${t} – thử lại nhé 💪`;
+  }
+  if(b.dataset.act==='reveal'){
+    clearMarks(q);
+    q.querySelectorAll('[data-empty]').forEach(el=>{el.value=''});items.forEach(el=>setv(el,answers(el)[0]));
+    q.querySelectorAll('[data-hint]').forEach(el=>{if(!el.value.trim()){el.value=el.dataset.hint;el.classList.add('hinted')}});
+    q.classList.add('show');
+    msg.textContent='Đây là gợi ý, em hãy giải thích lại bằng lời của mình nhé ✨';
+  }
+  if(b.dataset.act==='reset'){
+    clearMarks(q);
+    q.querySelectorAll('.pills .on').forEach(x=>x.classList.remove('on'));
+    q.querySelectorAll('select,textarea,input').forEach(x=>{x.value='';x.classList.remove('hinted')});
+    const bank=q.querySelector('.bank');
+    q.querySelectorAll('.chip').forEach(c=>{c.classList.remove('sel');bank.appendChild(c)});
+    q.classList.remove('show');msg.textContent='';
+  }
+});
+document.addEventListener('input',e=>{e.target.classList.remove('hinted','ok','bad')});
+
+</script>
+</body>
+</html>
